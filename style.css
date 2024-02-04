@@ -18,7 +18,8 @@ header nav{
     z-index: 1;
 
 }
-.header-textt{
+.header-text{
+    margin-left: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
