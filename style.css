@@ -106,7 +106,7 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
 
 .recipe-details-content-youtube-link{
     width: 75%;
-    height: 86%;
+    height: 75%;
     padding: 20px;
     position: fixed;
     left: 0%;
@@ -126,7 +126,7 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
 
 .recipe-details-content-recipe-name{
     font-size: 30px;
-    width: 300px;
+    width: 500px;
     position: fixed;
     top: 5%;
     left: 3%;
@@ -134,25 +134,24 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
 }
 .recipe-details-content-recipe-area{
     font-size: 30px;
-    width: 300px;
+    width: 500px;
     position: fixed;
     top:5%;
-    left: 23%;
+    left: 35%;
 }
 .recipe-details-content-recipe-time{
     font-size: 30px;
     width: 300px;
     position: fixed;
     top:5%;
-    left: 43%;
+    left: 64%;
 }
 .recipe-details-content-recipe-calories{
     font-size: 30px;
     width: 300px;
     position: fixed;
     top:5%;
-    left: 67%;
-    
+    left: 80%;
 }
 .recipe-details-content-recipe-instruction{
     background:linear-gradient(to right, #213A50, #071938);
@@ -165,8 +164,8 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
     cursor: pointer;
     margin: 18px auto;
     position: fixed;
-    left: 83%;
-    top: 1%;
+    left: 30%;
+    top: 88%;
     
 }
 .recipe-more{
@@ -282,11 +281,11 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
         grid-template-columns: repeat(1, minMax(300px,1fr));
         gap: 20px;
     }
-    .recipe-details-content-instruction {
+    .recipe-details-content-recipe-instruction{
         position: fixed;
-        left: 3%;
-        bottom: 1%;
-        overflow-y: scroll; /* Add this line for mobile view scrolling */
+        top: 70%;
+        left: 7%;
+        /* overflow-y: scroll; Add this line for mobile view scrolling/ */
     }
     .recipe-details-content-youtube-link{
         width: 62%;
@@ -303,6 +302,13 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
         left: 4%;
     }
     .recipe-close-btn{
+        position: fixed;
+        right:0px;
+        top: 2%;
+        flex-grow: 1;
+        background-color: #fff;
+        color: #041026;
+        border-radius:  12px;
         padding: 8px;
         font-size: 18px;
     }
@@ -311,7 +317,7 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
         font-size: 18px;
         position: fixed;
         left: 65%;
-        top: 2%;
+        top: 5%;
     }
     
     .recipe-details-content-recipe-ingredient{
@@ -319,26 +325,32 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
         font-size: 9px;
         position: fixed;
         left: 65%;
-        top: 7%;
+        top: 10%;
         
     }
     .recipe-details-content h6{
-        font-size: 15px;
+        font-size: 18px;
         position: fixed;
         top: 42%;
         left: 4%;
     }
     .recipe-details-content-recipe-time{
-        font-size: 15px;
+        font-size: 18px;
         position: fixed;
         top: 42%;
         left: 35%;
     }
-    .recipe-details-content-recipe-area{
-        font-size: 15px;
+    .recipe-details-content-recipe-calories{
+        font-size: 18px;
         position: fixed;
-        top: 46%;
-        left: 4%;
+        top: 42%;
+        left: 5%;
+    }
+    .recipe-details-content-recipe-area{
+        font-size: 18px;
+        position: fixed;
+        top: 48%;
+        left: 5%;
     }
     
     .recipe-details-content-recipe-nutrients-list{

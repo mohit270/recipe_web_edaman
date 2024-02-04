@@ -17,25 +17,29 @@ const next = document.querySelector('.recipe-more');
 
 // }
 let querylast = '';
-let querycount;
+let querystart;
+let queryend;
 document.addEventListener('DOMContentLoaded', function () {
-    const defaultSearchQuery = 'today';
+    const defaultSearchQuery = 'indian food';
     search_box.value = defaultSearchQuery;
-    fetchRecipe(defaultSearchQuery,21);
+    fetchRecipe(defaultSearchQuery,0,21);
 });
 
-const fetchRecipe = async(query,count)=> {
+const fetchRecipe = async(query,startquery,endquery)=> {
     querylast = query;
-    querycount = count;
+    querystart = startquery;
+    queryend = endquery;
     try{
-        if(query != 'today') recipe_container.innerHTML = ` <h3 class="dialer">Searching Your Recipes....</h3>`;
-        const base_url = `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}&to=${count}`;
+        if(query != 'indian food') recipe_container.innerHTML = ` <h3 class="dialer">Searching Your Recipes....</h3>`;
+
+        const base_url = `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}&to=${endquery}&from=${startquery}`;
         const data = await fetch(base_url);
         const response = await data.json();
-        if(query != 'today') recipe_container.innerHTML = ``;
+        if(query != 'indian food') recipe_container.innerHTML = ``;
         console.log(response);
             response.hits.forEach(meal => {
-                console.log(meal);
+                // console.log(meal);
+
                 const div_meal = document.createElement('div');
                 div_meal.classList.add('recipe');
                 div_meal.innerHTML = `<img src="${meal.recipe.image}">
@@ -86,7 +90,7 @@ const fetch_nutrients = (meals)=>{
 }
 
 next.addEventListener('click',()=>{
-    fetchRecipe(querylast,querycount+9);
+    fetchRecipe(querylast,querystart+9,queryend+9);
 })
 const openRecipePopup = (meal)=>{
     recipe_details_content.innerHTML = `
@@ -94,7 +98,7 @@ const openRecipePopup = (meal)=>{
     <u class="recipe-details-content-recipe-name">${meal.label}</u>
     <u class="recipe-details-content-recipe-area">${meal.cuisineType} ${meal.dishType}</u>
     <u class="recipe-details-content-recipe-time">Time: ${meal.totalTime} min</u>
-    <u class="recipe-details-content-recipe-calories">calories: ${parseInt(meal.calories)}</u>
+    <u class="recipe-details-content-recipe-calories">Calories: ${parseInt(meal.calories)}</u>
     <u class="recipe-details-content-recipe-ingredient-list">Ingredients:<h3>
     <ul class="recipe-details-content-recipe-ingredient">${fetch_ingredients(meal.ingredientLines)}</ul>
     <h3 class="recipe-details-content-recipe-nutrients-list">Nutrients:<h3>
@@ -111,5 +115,5 @@ close_btn.addEventListener('click',()=>{
 search_button.addEventListener('click',(e)=>{
     e.preventDefault();
     const query = search_box.value.trim();
-    fetchRecipe(query,21);
+    fetchRecipe(query,0,21);
 });
