@@ -111,16 +111,5 @@ close_btn.addEventListener('click',()=>{
 search_button.addEventListener('click',(e)=>{
     e.preventDefault();
     const query = search_box.value.trim();
-    fetchRecipe(query);
+    fetchRecipe(query,21);
 });
-
-
-// const meal_url = (url)=>{
-//     const regex = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-
-//     // Match the regex against the URL
-//     const match = url.match(regex);
-
-//     // If a match is found, return the video ID, otherwise return null
-//     return match ? match[1] : null;
-// }
