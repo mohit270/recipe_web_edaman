@@ -270,8 +270,8 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
     header nav{
         flex-direction: column;
     }
-    header nav form{
-        width: 100%;
+    form input[type="text"]{
+        max-width: 300px;
     }
     .recipe-container{
         margin-left: 5vh;
