@@ -7,6 +7,8 @@ const API_ID = '750cd122';
 const API_KEY = 'cb0b543f4ceebc948a56f8c79d8dc729';
 const BASEURL = `https://api.edamam.com/search?q=pizza&app_id=${API_ID}&app_key=${API_KEY}&to=20`;
 const next = document.querySelector('.recipe-more');
+const header_text = document.querySelector('.header-text');
+const sub_header_text = document.querySelector('.sub-header-text');
 
 
 // const data = async function fatching(query){
@@ -29,11 +31,17 @@ const fetchRecipe = async(query,startquery,endquery)=> {
     querystart = startquery;
     queryend = endquery;
     try{
-        if(query != 'indian food') recipe_container.innerHTML = ` <h3 class="dialer">Searching Your Recipes....</h3>`;
+        if(query != 'indian food'){
+            search_box.value = '';
+            header_text.style.display = 'none';
+            sub_header_text.style.display = 'none';
+            recipe_container.innerHTML = ` <h3 class="dialer">Searching Your Recipes....</h3>`;
+        }
 
         const base_url = `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}&to=${endquery}&from=${startquery}`;
         const data = await fetch(base_url);
         const response = await data.json();
+        console.log(response);
         if(query != 'indian food') recipe_container.innerHTML = ``;
         console.log(response);
             response.hits.forEach(meal => {
@@ -85,7 +93,7 @@ const fetch_nutrients = (meals)=>{
 }
 
 next.addEventListener('click',()=>{
-    fetchRecipe(querylast,querystart+9,queryend+9);
+    fetchRecipe(querylast+1,queryend,queryend+21);
 })
 const openRecipePopup = (meal)=>{
     recipe_details_content.innerHTML = `
