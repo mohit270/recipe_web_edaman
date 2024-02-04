@@ -270,11 +270,14 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
     header nav{
         flex-direction: column;
     }
+    header form{
+        margin-top: 8px;
+    }
     form input[type="text"]{
         max-width: 300px;
     }
     .recipe-container{
-        margin-left: 5vh;
+        margin-left: 3vh;
         justify-content: center;
         align-items: center;
         grid-template-columns: repeat(1, minMax(300px, 1fr));
