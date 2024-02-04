@@ -21,7 +21,6 @@ let querystart;
 let queryend;
 document.addEventListener('DOMContentLoaded', function () {
     const defaultSearchQuery = 'indian food';
-    search_box.value = defaultSearchQuery;
     fetchRecipe(defaultSearchQuery,0,21);
 });
 
@@ -73,10 +72,6 @@ const fetch_ingredients = (meals)=>{
     let ingredientsList = "";
     console.log(meal);
     meal.forEach(ingredient=>{
-        // if(ingredient){
-        //     const measure = meal[`strMeasure${i}`];
-        //     ingredientsList += `<li>${measure} ${ingredient}</li>`;
-        // }
         ingredientsList += `<li>${ingredient}</li>`;
     });return ingredientsList;
 }
