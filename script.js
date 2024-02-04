@@ -93,7 +93,7 @@ const fetch_nutrients = (meals)=>{
 }
 
 next.addEventListener('click',()=>{
-    fetchRecipe(querylast+1,queryend,queryend+21);
+    fetchRecipe(querylast,queryend+1,queryend+21);
 })
 const openRecipePopup = (meal)=>{
     recipe_details_content.innerHTML = `
