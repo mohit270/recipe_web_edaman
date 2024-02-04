@@ -271,17 +271,13 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
         flex-direction: column;
     }
     header nav form{
-        margin-top: 10px;
-        margin-left: 45px;
-        margin-right: 45px;
-        width: fit-content;
-        height: 5vh;
+        width: 100%;
     }
     .recipe-container{
         margin-left: 5vh;
         justify-content: center;
         align-items: center;
-        grid-template-columns: repeat(1, minMax(300px,1fr));
+        grid-template-columns: repeat(1, minMax(300px, 1fr));
         gap: 20px;
     }
     .recipe-details-content-recipe-instruction{
