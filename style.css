@@ -195,10 +195,12 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
 
 .recipe-details-content-recipe-ingredient{
     width: 350px;
+    height: 310px;
     font-size: 12px;
     position: fixed;
-    left: 76%;
+    left: 75%;
     top: 17%;
+    overflow-y: scroll;
 }
 .recipe-details-content-recipe-nutrients-list{
     width: 350px;
@@ -339,22 +341,22 @@ form:hover , .recipe button:hover,.recipe-close-btn:hover{
         left: 4%;
     }
     .recipe-details-content-recipe-time{
-        font-size: 18px;
+        font-size: 16px;
         position: fixed;
         top: 42%;
         left: 35%;
     }
     .recipe-details-content-recipe-calories{
-        font-size: 18px;
+        font-size: 16px;
         position: fixed;
         top: 42%;
-        left: 5%;
+        left: 4%;
     }
     .recipe-details-content-recipe-area{
         font-size: 18px;
         position: fixed;
         top: 48%;
-        left: 5%;
+        left: 9%;
     }
     
     .recipe-details-content-recipe-nutrients-list{

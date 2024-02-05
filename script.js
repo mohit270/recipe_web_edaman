@@ -9,15 +9,9 @@ const BASEURL = `https://api.edamam.com/search?q=pizza&app_id=${API_ID}&app_key=
 const next = document.querySelector('.recipe-more');
 const header_text = document.querySelector('.header-text');
 const sub_header_text = document.querySelector('.sub-header-text');
+const body = document.querySelector('body');
 
 
-// const data = async function fatching(query){
-//     const base_url = `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}&to=20`;
-//     const data = await fetch(base_url);
-//     const response = data.json();
-//     return response;
-
-// }
 let querylast = '';
 let querystart;
 let queryend;
@@ -61,6 +55,7 @@ const fetchRecipe = async(query,startquery,endquery)=> {
 
                 // adding EventListener to button
                 button.addEventListener('click',()=>{
+                    body.style.overflow = 'hidden';
                     openRecipePopup(meal.recipe);
                 });
 
@@ -93,6 +88,7 @@ const fetch_nutrients = (meals)=>{
 }
 
 next.addEventListener('click',()=>{
+    
     fetchRecipe(querylast,queryend+1,queryend+21);
 })
 const openRecipePopup = (meal)=>{
@@ -112,6 +108,7 @@ const openRecipePopup = (meal)=>{
 }
 
 close_btn.addEventListener('click',()=>{
+    body.style.overflow = 'scroll';
     recipe_details_content.parentElement.style.display = 'none';
 })
 
